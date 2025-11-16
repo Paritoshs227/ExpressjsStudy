@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+         <div class="text-center">
+            View Contact
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" readonly value="<%= contact.firstName %>">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" readonly value="<%= contact.lastName %>">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" readonly value="<%= contact.email %>">
+        </div>
+        <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobile" placeholder="Mobile Number" readonly value="<%= contact.mobile %>">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea class="form-control" id="address" rows="3" readonly><%= contact.address %></textarea>
+        </div>
+        <div>
+            <a href="/update-contact/<%= contact._id %>" class="btn btn-primary">Edit</a>
+            <a href="/delete-contact/<%= contact._id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete..??')">delete</a>
+            <a href="/" class="btn btn-info">Cancel</a>   
+        </div>
+ 
+    <%- include("partials/footer") %>

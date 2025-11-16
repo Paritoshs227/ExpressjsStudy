@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+    <form action="/update-contact/<%= contact._id %>" method="post">
+
+        <div class="text-center">
+            Update Contact
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"
+                value="<%= contact.firstName %>">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName"   placeholder="Last Name"
+                value="<%= contact.lastName %>">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                value="<%= contact.email %>">
+        </div>
+        <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number"
+                value="<%= contact.mobile %>">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea class="form-control" id="address" name="address" rows="3"><%= contact.address %></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to update..??')">Update Contact</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+    <%- include("partials/footer") %>

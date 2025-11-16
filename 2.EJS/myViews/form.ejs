@@ -1,0 +1,15 @@
+<%- include("header")  %>
+        <div class="row">
+            <form action="/submit" method="post">
+                Enter Name: <input type="text" name="username" />
+                <br>
+                <input type="submit" value="Submit" />
+            </form>
+            <% if(message){ %>
+                <p> <%= message %></p>
+                <% } %>
+        </div>
+        <div>
+            <img src="/images/perfume.jpg" alt="Image" class="w-25"/>
+        </div>
+<%- include("footer")  %>

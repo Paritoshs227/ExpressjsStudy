@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+
+
+    <div class="text-center">
+        <div class="text-center">
+            <h1>500 Error</h1>
+        </div>
+        <% if(message){%>
+            <h1><%= message %></h1>
+
+            <% }else{ %>
+                <h1>Internal Server Error </h1>
+                <% } %>
+
+    </div>
+
+
+
+
+
+    <%- include("partials/footer") %>

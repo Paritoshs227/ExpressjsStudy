@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+<form action="/add-contact" method="post">
+
+    <div class="text-center">
+        Add Contact
+    </div>
+
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+    </div>
+
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+
+    <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number">
+    </div>
+
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Add Contact</button>
+        <a href="/" class="btn btn-secondary">Cancel</a>
+    </div>
+
+</form>
+
+    <%- include("partials/footer") %>

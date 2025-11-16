@@ -1,0 +1,71 @@
+<%- include("partials/header") %>
+
+    <div class="text-end">
+        <a href="/add-contact" class="btn btn-success my-3">Add New Contact</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% let srno=counter %>
+            <% contacts.forEach((item)=> {%>
+                <tr>
+                    <th scope="row">
+                        <%= srno++ %>
+                    </th>
+                    <th>
+                        <%= item.firstName %>
+                    </th>
+                    <td>
+                        <%= item.lastName %>
+                    </td>
+                    <td>
+                        <%= item.email %>
+                    </td>
+                    <td>
+                        <%= item.mobile %>
+                    </td>
+                    <td>
+                        <a href="/show-contact/<%= item._id %>" class="btn btn-primary">view</a>
+                        <a href="/update-contact/<%= item._id %>" class="btn btn-info">Edit</a>
+                        <a href="/delete-contact/<%= item._id %>" class="btn btn-danger"
+                            onclick="return confirm('Are you sure to delete..??')">Delete</a>
+                    </td>
+                </tr>
+
+                <% }); %>
+
+        </tbody>
+    </table>
+    <nav aria-label="...">
+        <ul class="pagination">
+            <% let prevDisabled=hasPrevPage ? '' : 'disabled' ; %>
+                <li class="page-item <%= prevDisabled %>">
+                    <a class="page-link" href="/paginate?page=<%= prevPage %>">Previous</a>
+                </li>
+                <% for(i=1;i<=totalPages;i++) { %>
+                    <% let curr = (i === currPage) ? 'active' : '' ; %>
+                    <li class="page-item <%= curr %>"><a class="page-link" href="/paginate?page=<%= i %>">
+                            <%= i %>
+                        </a></li>
+                    <% } %>
+                        <!-- <li class="page-item active">
+                <a class="page-link" href="#" aria-current="page">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+
+            <% let nextDisabled=hasNextPage ? '' : 'disabled' ; %>
+                        <li class="page-item <%= nextDisabled %>">
+                            <a class="page-link" href="/paginate?page=<%= nextPage %>">Next</a>
+                        </li>
+        </ul>
+    </nav>
+    <%- include("partials/footer") %>

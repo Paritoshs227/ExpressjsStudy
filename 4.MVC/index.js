@@ -3,7 +3,7 @@ import contactRoutes from './routes/contact.routes.js';
 import { connectDB } from './config/database.js';
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT ;
 
 // Connect to the database
 connectDB();   
